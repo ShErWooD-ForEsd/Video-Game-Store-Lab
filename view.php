@@ -21,13 +21,13 @@ require __DIR__ . '/includes/functions.php';
             <th>Image</th>
         </tr>
         <tr>
-            <?php foreach ($games as $game) {
-                $path = "img/$games[4]"; ?>
-                <td><?= esc_html($game[0]) ?></td>
-                <td><?= esc_html($game[1]) ?></td>
-                <td><?= esc_html($game[2]) ?></td>
-                <td><?= esc_html(number_format((float)$game[3], 2)) ?></td>
-                <td><?= esc_html("<img src='$path' alt='$game[4]'") ?></td>
+            <?php foreach ($rows as $row) {
+                $path = "img/$rows[4]"; ?>
+                <td><?= esc_html($row[0]) ?></td>
+                <td><?= esc_html($row[1]) ?></td>
+                <td><?= esc_html($row[2]) ?></td>
+                <td><?= esc_html(number_format((float)$row[3], 2)) ?></td>
+                <td><?= esc_html("<img src='$path' alt='$row[4]'") ?></td>
             <?php } ?>
         </tr>
 
