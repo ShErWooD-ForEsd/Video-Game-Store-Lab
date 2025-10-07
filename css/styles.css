@@ -1,0 +1,22 @@
+body {
+    background-image: linear-gradient(to right, black, darkgrey, lightgrey, whitesmoke, lightgrey, darkgrey, black);
+    margin: 2%;
+    padding: 2%;
+}
+
+div {
+    background-color: whitesmoke;
+    margin: 3%;
+    padding: 3%;
+    outline: black groove 2px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 2%;
+    background-color: black;
+    color: whitesmoke;
+}
