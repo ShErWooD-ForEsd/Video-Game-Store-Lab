@@ -3,7 +3,7 @@
 require __DIR__ . '/functions.php'; //attach the functions page
 
 $csvPath = __DIR__ . '/data/games.csv'; //path created to bring in data
-$rows = read_csv_rows($csvPath); //calling the function to read the rows, which should go into the table below. I'm missing a connection before this I believe.
+$rows = read_csv_rows(); //calling the function to read the rows, which should go into the table below. I'm missing a connection before this I believe.
 ?>
 
 <!DOCTYPE html>
@@ -28,19 +28,19 @@ $rows = read_csv_rows($csvPath); //calling the function to read the rows, which 
                 <th>Price</th>
                 <th>Image</th>
             </tr>
-            <tr>
+
                 <!-- This section is supposed to read the data from the function listed above, but I'm encountering an error somewhere before this point -->
                 <?php foreach ($rows as $row) {
                     $path = "img/$row[4]"; ?>
                     <!-- esc_html added to protect from user injected maliscious info -->
-                    <td><?= esc_html($row[0]) ?></td>
+                                <tr><td><?= esc_html($row[0]) ?></td>
                     <td><?= esc_html($row[1]) ?></td>
                     <td><?= esc_html($row[2]) ?></td>
                     <td><?= esc_html(number_format((float)$row[3], 2)) ?></td>
-                    <td><?= esc_html("<img src='$path' alt='$row[4]'") ?></td>
+                    <td><?= esc_html("<img src='$path' alt='$row[4]'") ?></td></tr>
                     <!-- This last one should add the images in the CSV file -->
                 <?php } ?>
-            </tr>
+            
 
         </table>
     </div>
